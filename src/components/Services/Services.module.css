@@ -1,0 +1,165 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.card {
+  background: var(--bg-card);
+  padding: 36px 32px;
+  border: 1px solid var(--border);
+  transition: border-color 0.3s, background 0.3s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  background: var(--bg-light);
+  border-color: rgba(232,184,0,0.2);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  background: var(--yellow-dim);
+  border: 1px solid var(--yellow-border);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.problem {
+  font-size: 0.875rem;
+  color: var(--white-50);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.forWhom {
+  flex: 1;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.forWhomLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white-50);
+  margin-bottom: 12px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list li {
+  font-size: 0.82rem;
+  color: var(--white-80);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.45;
+}
+
+.list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+.link {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--yellow);
+  text-decoration: none;
+  transition: opacity 0.2s;
+  margin-top: auto;
+}
+
+.link:hover { opacity: 0.7; }
+
+/* ── Muted card ── */
+.muted {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+
+.muted:hover {
+  background: var(--bg-card);
+  border-color: var(--border);
+}
+
+.muted::before { display: none; }
+
+.soon {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--bg-light);
+  color: var(--white-50);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.mutedOverlay {
+  margin-top: auto;
+  padding: 10px 16px;
+  background: var(--bg-light);
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  color: var(--white-50);
+  text-align: center;
+  border: 1px dashed var(--border);
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}

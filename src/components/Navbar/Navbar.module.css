@@ -1,0 +1,112 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  padding: 14px 0;
+  box-shadow: 0 2px 20px rgba(17,17,17,0.06);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+
+.logo span {
+  color: var(--yellow);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  flex: 1;
+  justify-content: center;
+}
+
+.links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(17, 17, 17, 0.55);
+  transition: color 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.links a:hover {
+  color: #111111;
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.burger span,
+.burger span::before,
+.burger span::after {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 22px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s;
+  left: 5px;
+}
+
+.burger span { top: 15px; }
+.burger span::before { content: ''; top: -7px; }
+.burger span::after { content: ''; top: 7px; }
+
+.burger span.burgerOpen { background: transparent; }
+.burger span.burgerOpen::before { transform: rotate(45deg); top: 0; }
+.burger span.burgerOpen::after { transform: rotate(-45deg); top: 0; }
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    flex-direction: column;
+    padding: 32px 24px;
+    gap: 24px;
+    border-bottom: 1px solid rgba(17,17,17,0.08);
+    box-shadow: 0 8px 24px rgba(17,17,17,0.08);
+  }
+
+  .links.open { display: flex; }
+
+  .links a { font-size: 1.1rem; color: #111; }
+
+  .burger { display: block; }
+}

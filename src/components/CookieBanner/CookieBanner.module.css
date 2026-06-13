@@ -1,0 +1,103 @@
+.banner {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  width: 300px;
+  animation: slideUp 0.35s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  box-shadow:
+    0 8px 32px rgba(17, 17, 17, 0.1),
+    0 2px 8px rgba(17, 17, 17, 0.06);
+}
+
+.icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.text {}
+
+.message {
+  font-size: 0.78rem;
+  color: var(--white-80);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.link {
+  color: var(--yellow);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.15s;
+}
+
+.link:hover {
+  opacity: 0.75;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btnAccept {
+  flex: 1;
+  padding: 8px 16px;
+  background: var(--yellow);
+  color: #111;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btnAccept:hover {
+  opacity: 0.85;
+}
+
+.btnDecline {
+  padding: 8px 12px;
+  background: transparent;
+  color: var(--white-50);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.btnDecline:hover {
+  color: var(--white);
+}
+
+@media (max-width: 480px) {
+  .banner {
+    bottom: 12px;
+    right: 12px;
+    width: calc(100% - 24px);
+  }
+}

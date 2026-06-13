@@ -1,0 +1,86 @@
+.footer {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  padding: 56px 0 32px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.logo span { color: var(--yellow); }
+
+.tagline {
+  font-size: 0.82rem;
+  color: var(--white-50);
+  max-width: 260px;
+  line-height: 1.5;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav a {
+  font-size: 0.85rem;
+  color: var(--white-50);
+  transition: color 0.2s;
+}
+
+.nav a:hover { color: var(--yellow); }
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactLink {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--white-50);
+  transition: color 0.2s;
+}
+
+.contactLink:hover { color: var(--yellow); }
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  color: var(--white-50);
+}
+
+.policy {
+  color: var(--white-50);
+  transition: color 0.2s;
+}
+
+.policy:hover { color: var(--white); }
+
+@media (max-width: 768px) {
+  .top { grid-template-columns: 1fr; gap: 32px; }
+  .bottom { flex-direction: column; text-align: center; }
+}

@@ -1,0 +1,244 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 80px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.glow1 {
+  position: absolute;
+  top: -200px;
+  right: -100px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(232,184,0,0.07) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.glow2 {
+  position: absolute;
+  bottom: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(100,80,220,0.04) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Two-column layout */
+.layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 64px;
+  align-items: center;
+}
+
+.left {}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(232,184,0,0.35);
+  background: rgba(232,184,0,0.06);
+  color: var(--yellow);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 2px;
+  margin-bottom: 28px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.title {
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.title em {
+  font-style: normal;
+  color: var(--yellow);
+}
+
+.asterisk {
+  color: var(--yellow);
+  font-size: 0.45em;
+  vertical-align: super;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--white-50);
+  max-width: 500px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.footnote {
+  font-size: 0.78rem;
+  color: var(--white-50);
+  margin-bottom: 36px;
+  max-width: 460px;
+  line-height: 1.5;
+}
+
+.footnote sup {
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* RIGHT COLUMN */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: 0 4px 40px rgba(17,17,17,0.06);
+}
+
+.cardLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white-50);
+  margin-bottom: 20px;
+}
+
+.cardList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.cardList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--white-80);
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  background: var(--yellow);
+  color: #111;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.cardPrice {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.priceNum {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.priceNote {
+  font-size: 0.8rem;
+  color: var(--white-50);
+}
+
+/* Stats row below card */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+}
+
+.statNum {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--yellow);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--white-50);
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 120px 0 64px; }
+  .title { font-size: 2.2rem; }
+  .stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .statNum { font-size: 1.1rem; }
+}
