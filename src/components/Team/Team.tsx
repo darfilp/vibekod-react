@@ -4,6 +4,7 @@ interface Stat { value: string; label: string }
 
 interface Member {
   initials: string
+  photo: string
   name: string
   role: string
   quote: string
@@ -19,6 +20,7 @@ interface Member {
 const members: Member[] = [
   {
     initials: 'Д',
+    photo: '/team/daria.jpg',
     name: 'Дарья',
     role: 'Frontend-разработчик',
     quote: '«Сайт — это первое впечатление. Делаю так, чтобы оно было хорошим.»',
@@ -35,6 +37,7 @@ const members: Member[] = [
   },
   {
     initials: 'О',
+    photo: '/team/oleg.jpg',
     name: 'Олег',
     role: 'Backend-разработчик',
     quote: '«Хороший сайт — это не только красиво, но и надёжно.»',
@@ -78,16 +81,7 @@ export default function Team() {
                   background: `linear-gradient(150deg, ${m.bgFrom} 0%, ${m.bgTo} 100%)`,
                 } as React.CSSProperties}
               >
-                <span
-                  className={styles.initial}
-                  style={{ color: m.accentColor } as React.CSSProperties}
-                >
-                  {m.initials}
-                </span>
-                {/*
-                  ЗАГЛУШКА — когда будет фото:
-                  <img src="/team/daria.jpg" alt={m.name} className={styles.photo} />
-                */}
+                <img src={m.photo} alt={m.name} className={styles.photo} />
               </div>
 
               {/* Content */}
